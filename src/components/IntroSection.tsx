@@ -2,7 +2,7 @@ export default function IntroSection(): JSX.Element {
   return (
     <section className="flex items-start justify-center bg-bg pt-[100px] pb-4 mb-[30px]">
       <div className="text-left w-full">
-        <h1 className="font-bold text-text mb-10 md:mb-6">Justin Cheng</h1>
+        <h1 className="font-bold text-text mb-6">Justin Cheng</h1>
         <h3 className="font-normal text-text mb-6">
           I build products at the intersection of design, technology, and storytelling.
           Currently, I lead strategy and operations at <a href="https://www.sentra.app/" target="_blank" rel="noopener noreferrer" className="slide-underline">Sentra</a>, the organizational

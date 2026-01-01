@@ -3,9 +3,6 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      fontFamily: {
-        hind: ['Hind Siliguri', 'sans-serif'],
-      },
       colors: {
         bg: 'var(--bg)',
         text: 'var(--text-color)',

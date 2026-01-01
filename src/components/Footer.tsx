@@ -18,7 +18,7 @@ const socialLinks: SocialLink[] = [
   },
   {
     name: 'Twitter',
-    href: 'https://x.com/justincggg',
+    href: 'https://x.com/justincgg',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -47,23 +47,24 @@ const socialLinks: SocialLink[] = [
 
 export default function Footer(): JSX.Element {
   return (
-    <footer className="pt-4 pb-3 md:pt-8 md:pb-3 mt-auto flex flex-col relative">
-      <div className="w-screen border-t border-custom-border mb-4 left-1/2 -translate-x-1/2 absolute top-12 md:top-15"></div>
-      <div className="flex gap-3 items-center justify-end mt-6">
-        {socialLinks.map((link) => (
-          <a
-            key={link.name}
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={link.name}
-            className="text-text opacity-60 p-2 rounded-lg"
-          >
-            {link.icon}
-          </a>
-        ))}
+    <footer className="h-[60px] flex flex-col relative">
+      <div className="w-screen border-t border-custom-border left-1/2 -translate-x-1/2 absolute top-0" />
+      <div className="flex-1 flex items-center justify-end">
+        <div className="flex gap-3 items-center">
+          {socialLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={link.name}
+              className="text-text opacity-60 hover:opacity-100 transition-opacity duration-200 p-2"
+            >
+              {link.icon}
+            </a>
+          ))}
+        </div>
       </div>
     </footer>
   );
 }
-

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,7 +7,7 @@
 :root {
   --bg: #17181C;
   --text-color: #e4e3dc;
-  --font-size-h1: 1.8rem;
+  --font-size-h1: 1.5rem;
   --font-size-h2: 1rem;
   --font-size-h3: 0.8rem;
 }
@@ -18,26 +18,15 @@ html {
 }
 
 body {
-  font-family: 'Hind Siliguri', sans-serif;
+  font-family: 'Zalando Sans', sans-serif;
   background-color: var(--bg);
   color: var(--text-color);
   min-height: 100vh;
 }
 
-h1 {
-  font-size: var(--font-size-h1);
-  line-height: 1.2;
-}
-
-h2 {
-  font-size: var(--font-size-h2);
-  line-height: 1.4;
-}
-
-h3 {
-  font-size: var(--font-size-h3);
-  line-height: 1.5;
-}
+h1 { font-size: var(--font-size-h1); line-height: 1.2; }
+h2 { font-size: var(--font-size-h2); line-height: 1.4; }
+h3 { font-size: var(--font-size-h3); line-height: 1.5; }
 
 @media (max-width: 768px) {
   :root {
@@ -55,7 +44,7 @@ h3 {
 .slide-underline::after {
   content: '';
   position: absolute;
-  bottom: 6px;
+  bottom: 2px;
   left: 2%;
   width: 96%;
   height: 1px;
@@ -70,7 +59,6 @@ h3 {
   transform-origin: right;
 }
 
-/* Pulsating cursor animation for typing test */
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
@@ -78,4 +66,49 @@ h3 {
 
 .typing-cursor {
   animation: pulse 1s ease-in-out infinite;
+}
+
+.experience-logo {
+  opacity: 0.6;
+  filter: grayscale(1) brightness(1.5);
+  transition: all 0.2s ease-out;
+}
+
+.group:hover .experience-logo {
+  opacity: 1;
+  filter: grayscale(0) brightness(1);
+}
+
+.map-wrapper {
+  position: relative;
+}
+
+.map-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #17181C;
+  mix-blend-mode: color;
+  opacity: 0.4;
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 1000;
+}
+
+.leaflet-container {
+  background: #17181C;
+  font-family: 'Zalando Sans', sans-serif;
+  filter: brightness(0.9) contrast(0.95) saturate(0.45);
+}
+
+.leaflet-control-attribution {
+  background: rgba(23, 24, 28, 0.85) !important;
+  color: rgba(228, 227, 220, 0.5) !important;
+  font-size: 0.65rem !important;
+  position: relative;
+  z-index: 1001;
+}
+
+.leaflet-control-attribution a {
+  color: rgba(228, 227, 220, 0.6) !important;
 }

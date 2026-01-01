@@ -1,13 +1,13 @@
 import IntroSection from '../components/IntroSection';
 import ExperienceSection from '../components/ExperienceSection';
-import TypingTest from '../components/TypingTest';
+import NowSection from '../components/NowSection';
 
 export default function Home(): JSX.Element {
   return (
     <div className="flex-1">
       <IntroSection />
       <ExperienceSection />
-      <TypingTest />
+      <NowSection />
     </div>
   );
 }

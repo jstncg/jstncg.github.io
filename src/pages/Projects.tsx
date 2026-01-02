@@ -19,7 +19,7 @@ export default function Projects(): JSX.Element {
 
   return (
     <div className="flex-1 flex flex-col pt-[100px]">
-      <h1 className="font-bold text-text mb-6">Projects</h1>
+      <h1 className="font-[580] text-text mb-6">Projects</h1>
       <div className="flex flex-col w-full -mt-2" onMouseLeave={() => setHoveredIndex(null)}>
         {projectItems.map((item, index) => (
           <div key={item.path}>

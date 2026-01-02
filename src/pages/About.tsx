@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const aboutItems = [
-  { label: 'my life thus far', path: '/about/life' },
-  { label: 'reading list', path: '/about/reading' },
-  { label: 'music', path: '/about/music' },
-  { label: 'favorite quotes', path: '/about/quotes' },
-  { label: 'random thoughts', path: '/about/thoughts' },
+  { label: 'My life thus far', path: '/about/life' },
+  { label: 'Principles', path: '/about/quotes' },
+  { label: 'Favorite media', path: '/about/music' },
+  { label: 'Reading list', path: '/about/reading' },
+  { label: 'Thoughts', path: '/about/thoughts' },
 ];
 
 export default function About(): JSX.Element {
@@ -14,7 +14,7 @@ export default function About(): JSX.Element {
 
   return (
     <div className="flex-1 flex flex-col pt-[100px]">
-      <h1 className="font-bold text-text mb-6">About me</h1>
+      <h1 className="font-[580] text-text mb-6">About</h1>
       <div className="flex flex-col w-full -mt-2" onMouseLeave={() => setHoveredIndex(null)}>
         {aboutItems.map((item, index) => (
           <div key={item.path}>

@@ -262,7 +262,7 @@ export default function TypingTest(): JSX.Element {
 
   return (
     <section className="mb-[60px]">
-      <h2 className="font-semibold text-text mb-3">Race Me</h2>
+      <h2 className="font-[580] text-text mb-3">Race Me</h2>
       
       <div 
         className="bg-[#1e1f23] rounded-lg p-6 pb-8 border border-[#2a2b30] relative overflow-hidden min-h-[140px]"

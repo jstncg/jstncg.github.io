@@ -71,7 +71,7 @@ function ExperienceItem({ exp }: { exp: Experience }): JSX.Element {
       <ExperienceLogo exp={exp} />
       <div className="flex-1">
         <h3 className="font-normal text-text">{exp.company}</h3>
-        <h3 className="font-normal text-text opacity-60 group-hover:opacity-100 transition-opacity duration-200 ease-out">
+        <h3 className="font-normal text-text opacity-50 group-hover:opacity-100 transition-opacity duration-200 ease-out">
           {exp.role}
         </h3>
       </div>
@@ -94,7 +94,7 @@ function ExperienceItem({ exp }: { exp: Experience }): JSX.Element {
 export default function ExperienceSection(): JSX.Element {
   return (
     <section className="mb-[60px]">
-      <h2 className="font-semibold text-text mb-3 opacity-60">Experience</h2>
+      <h2 className="font-[580] text-text mb-3 opacity-50">Experience</h2>
       <div className="flex flex-col mt-3">
         {experiences.map((exp) => (
           <ExperienceItem key={exp.company} exp={exp} />

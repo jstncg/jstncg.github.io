@@ -18,7 +18,7 @@ export default function NowSection(): JSX.Element {
 
       mapInstanceRef.current = L.map(mapRef.current, {
         center: sfCoords,
-        zoom: 13,
+        zoom: 12,
         zoomControl: false,
         attributionControl: false,
         scrollWheelZoom: true,
@@ -40,7 +40,7 @@ export default function NowSection(): JSX.Element {
 
   return (
     <section className="mb-[60px]">
-      <h2 className="font-semibold text-text mb-3 opacity-60">Now</h2>
+      <h2 className="font-[580] text-text mb-3 opacity-50">Now</h2>
       
       <div className="map-wrapper w-full h-[250px] rounded-lg overflow-hidden mt-4 mb-5">
         <div ref={mapRef} className="w-full h-full" style={{ background: '#17181C' }} />
@@ -50,7 +50,7 @@ export default function NowSection(): JSX.Element {
         {infoRows.map((row) => (
           <div key={row.label} className="flex items-center gap-4">
             <h3 className="text-text whitespace-nowrap">{row.label}</h3>
-            <div className="flex-1 border-b border-dashed" style={{ borderColor: 'rgba(228, 227, 220, 0.3)' }} />
+            <div className="flex-1 border-b border-dashed" style={{ borderColor: 'rgba(228, 227, 220, 0.4)' }} />
             <h3 className="text-text whitespace-nowrap">{row.value}</h3>
           </div>
         ))}

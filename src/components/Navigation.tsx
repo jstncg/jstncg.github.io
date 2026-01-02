@@ -29,7 +29,7 @@ export default function Navigation(): JSX.Element {
         onMouseEnter={() => setHomeHovered(true)}
         onMouseLeave={() => setHomeHovered(false)}
       >
-        <span className={`relative z-10 text-[length:var(--font-size-h3)] transition-opacity duration-200 ease-out ${homeHovered ? 'opacity-100' : 'opacity-60'}`}>
+        <span className={`relative z-10 text-[length:var(--font-size-h3)] transition-opacity duration-200 ease-out ${homeHovered ? 'opacity-100' : 'opacity-50'}`}>
           Home
         </span>
         <div 
@@ -59,7 +59,7 @@ export default function Navigation(): JSX.Element {
             key={item.name}
             to={item.path}
             onMouseEnter={() => setHoveredIndex(index)}
-            className={`relative z-10 flex items-center justify-center text-[length:var(--font-size-h3)] transition-opacity duration-200 ease-out ${hoveredIndex === index ? 'opacity-100' : 'opacity-60'}`}
+            className={`relative z-10 flex items-center justify-center text-[length:var(--font-size-h3)] transition-opacity duration-200 ease-out ${hoveredIndex === index ? 'opacity-100' : 'opacity-50'}`}
             style={{ width: ITEM_WIDTH, height: ITEM_HEIGHT }}
           >
             {item.name}

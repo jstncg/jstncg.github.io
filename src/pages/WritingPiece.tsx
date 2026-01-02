@@ -35,7 +35,7 @@ export default function WritingPiece(): JSX.Element {
   if (!piece) {
     return (
       <div className="flex-1 flex flex-col pt-[100px]">
-        <h1 className="font-bold text-text mb-6">Not Found</h1>
+        <h1 className="font-[580] text-text mb-6">Not Found</h1>
         <Link to="/writing" className="text-text opacity-50 hover:opacity-100 transition-opacity">
           ← Back to Writing
         </Link>
@@ -48,7 +48,7 @@ export default function WritingPiece(): JSX.Element {
       <Link to="/writing" className="text-text opacity-50 hover:opacity-100 transition-opacity mb-8 text-[length:var(--font-size-body)]">
         ← Back to Writing
       </Link>
-      <h1 className="font-bold text-text mb-2">{piece.title}</h1>
+      <h1 className="font-[580] text-text mb-2">{piece.title}</h1>
       <p className="text-text opacity-50 mb-10 text-[length:var(--font-size-body)]">{piece.date}</p>
       <div className="text-text text-[length:var(--font-size-body)] leading-relaxed">
         {piece.content}

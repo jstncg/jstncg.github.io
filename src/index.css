@@ -37,26 +37,14 @@ h3 { font-size: var(--font-size-h3); line-height: 1.5; }
 }
 
 .slide-underline {
-  position: relative;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s ease-out;
 }
 
-.slide-underline::after {
-  content: '';
-  position: absolute;
-  bottom: 2px;
-  left: 2%;
-  width: 96%;
-  height: 1px;
-  background-color: currentColor;
-  transform: scaleX(1);
-  transform-origin: left;
-  transition: transform 0.2s ease-out;
-}
-
-.slide-underline:hover::after {
-  transform: scaleX(0);
-  transform-origin: right;
+.slide-underline:hover {
+  text-decoration-color: transparent;
 }
 
 @keyframes pulse {
@@ -98,7 +86,7 @@ h3 { font-size: var(--font-size-h3); line-height: 1.5; }
 .leaflet-container {
   background: #17181C;
   font-family: 'Zalando Sans', sans-serif;
-  filter: brightness(0.9) contrast(0.95) saturate(0.45);
+  filter: brightness(0.9) contrast(0.95) saturate(0.0);
 }
 
 .leaflet-control-attribution {

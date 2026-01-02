@@ -48,7 +48,7 @@ const socialLinks: SocialLink[] = [
 export default function Footer(): JSX.Element {
   return (
     <footer className="mt-[100px] h-[60px] flex flex-col relative">
-      <div className="w-screen border-t border-custom-border left-1/2 -translate-x-1/2 absolute top-0" />
+      <div className="w-screen border-t theme-border left-1/2 -translate-x-1/2 absolute top-0" />
       <div className="flex-1 flex items-center justify-end">
         <div className="flex gap-1 items-center">
           {socialLinks.map((link) => (
@@ -58,7 +58,7 @@ export default function Footer(): JSX.Element {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={link.name}
-              className="text-text opacity-50 hover:opacity-100 transition-opacity duration-200 p-2"
+              className="social-icon p-2"
             >
               {link.icon}
             </a>

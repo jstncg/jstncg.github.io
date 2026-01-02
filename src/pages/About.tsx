@@ -18,7 +18,7 @@ export default function About(): JSX.Element {
       <div className="flex flex-col w-full -mt-2" onMouseLeave={() => setHoveredIndex(null)}>
         {aboutItems.map((item, index) => (
           <div key={item.path}>
-            <div className="border-t border-custom-border" />
+            <div className="border-t theme-border" />
             <Link
               to={item.path}
               onMouseEnter={() => setHoveredIndex(index)}
@@ -28,7 +28,7 @@ export default function About(): JSX.Element {
             >
               {item.label}
             </Link>
-            {index === aboutItems.length - 1 && <div className="border-t border-custom-border" />}
+            {index === aboutItems.length - 1 && <div className="border-t theme-border" />}
           </div>
         ))}
       </div>

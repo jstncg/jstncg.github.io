@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Heebo:wght@100..900&family=Hind+Guntur:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=TikTok+Sans:opsz,wght@12..36,300..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,9 +7,74 @@
 :root {
   --bg: #17181C;
   --text-color: #e4e3dc;
+  --nav-highlight: #222327;
+  --border-color: #333333;
+  --dotted-line: rgba(228, 227, 220, 0.3);
+  --logo-bg: rgba(255, 255, 255, 0.06);
+  --map-filter: brightness(0.9) contrast(1) saturate(0.0);
   --font-size-h1: 1.5rem;
   --font-size-h2: 1rem;
   --font-size-h3: 0.8rem;
+}
+
+/* ===== BLUE THEME ===== */
+:root.theme-blue {
+  --bg: #0044ff;
+  --text-color: #ffffff;
+  --nav-highlight: rgba(255, 255, 255, 0.15);
+  --border-color: rgba(255, 255, 255, 0.4);
+  --dotted-line: rgba(255, 255, 255, 0.4);
+  --logo-bg: rgba(255, 255, 255, 0.15);
+  --map-filter: brightness(01) contrast(1.5) saturate(0.0) invert(1);
+}
+
+:root.theme-blue body {
+  font-family: 'Google Sans Code', sans-serif;
+}
+
+/* ===== LIGHT THEME ===== */
+:root.theme-light {
+  --bg: #ffffff;
+  --text-color: #000000;
+  --nav-highlight: rgba(0, 0, 0, 0.08);
+  --border-color: rgba(0, 0, 0, 0.2);
+  --dotted-line: rgba(0, 0, 0, 0.2);
+  --logo-bg: rgba(0, 0, 0, 0.06);
+  --map-filter: brightness(1.5) contrast(2) saturate(0.0);
+}
+
+:root.theme-light body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* ===== BURGUNDY THEME ===== */
+:root.theme-burgundy {
+  --bg: #151515;
+  --text-color: #93032E;
+  --nav-highlight: rgba(147, 3, 46, 0.15);
+  --border-color: rgba(147, 3, 46, 0.4);
+  --dotted-line: rgba(147, 3, 46, 0.4);
+  --logo-bg: rgba(147, 3, 46, 0.1);
+  --map-filter: brightness(0.4) contrast(1) saturate(0.0);
+}
+
+:root.theme-burgundy body {
+  font-family: 'Newsreader', serif;
+}
+
+/* ===== LAVENDER THEME ===== */
+:root.theme-lavender {
+  --bg: #150811;
+  --text-color: #BEB8CD;
+  --nav-highlight: rgba(190, 184, 205, 0.15);
+  --border-color: rgba(190, 184, 205, 0.4);
+  --dotted-line: rgba(190, 184, 205, 0.4);
+  --logo-bg: rgba(190, 184, 205, 0.1);
+  --map-filter: brightness(1.8) contrast(0.8) saturate(0.0);
+}
+
+:root.theme-lavender body {
+  font-family: 'Schibsted Grotesk', sans-serif;
 }
 
 html {
@@ -59,12 +124,74 @@ h3 { font-size: var(--font-size-h3); line-height: 1.5; }
 .experience-logo {
   opacity: 0.6;
   filter: grayscale(1) brightness(1.5);
-  transition: all 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
 }
 
 .group:hover .experience-logo {
   opacity: 1;
   filter: grayscale(0) brightness(1);
+}
+
+/* Blue theme - experience logos */
+:root.theme-blue .experience-logo {
+  filter: brightness(10.0);
+}
+
+:root.theme-blue .group:hover .experience-logo {
+  filter: none;
+}
+
+/* Light theme - experience logos */
+:root.theme-light .experience-logo {
+  filter: grayscale(1) brightness(0.8);
+}
+
+:root.theme-light .group:hover .experience-logo {
+  filter: none;
+}
+
+/* Burgundy theme - experience logos */
+:root.theme-burgundy .experience-logo {
+  filter: grayscale(1) brightness(1.5) sepia(1) hue-rotate(-50deg) saturate(2);
+}
+
+:root.theme-burgundy .group:hover .experience-logo {
+  filter: none;
+}
+
+/* Lavender theme - experience logos */
+:root.theme-lavender .experience-logo {
+  filter: grayscale(1) brightness(1.5) sepia(0.3) hue-rotate(270deg);
+}
+
+:root.theme-lavender .group:hover .experience-logo {
+  filter: none;
+}
+
+.nav-highlight {
+  background-color: var(--nav-highlight);
+}
+
+.logo-bg {
+  background-color: var(--logo-bg);
+}
+
+.experience-hover:hover {
+  background-color: var(--nav-highlight);
+}
+
+.theme-border {
+  border-color: var(--border-color);
+}
+
+.social-icon {
+  color: var(--text-color);
+  opacity: 0.5;
+  transition: opacity 0.2s ease-out;
+}
+
+.social-icon:hover {
+  opacity: 1;
 }
 
 .map-wrapper {
@@ -75,7 +202,7 @@ h3 { font-size: var(--font-size-h3); line-height: 1.5; }
   content: '';
   position: absolute;
   inset: 0;
-  background: #17181C;
+  background: var(--bg);
   mix-blend-mode: color;
   opacity: 0.4;
   pointer-events: none;
@@ -84,19 +211,20 @@ h3 { font-size: var(--font-size-h3); line-height: 1.5; }
 }
 
 .leaflet-container {
-  background: #17181C;
+  background: var(--bg);
   font-family: 'Zalando Sans', sans-serif;
-  filter: brightness(0.9) contrast(0.95) saturate(0.0);
+  filter: var(--map-filter);
 }
 
 .leaflet-control-attribution {
-  background: rgba(23, 24, 28, 0.85) !important;
-  color: rgba(228, 227, 220, 0.5) !important;
+  background: var(--bg) !important;
+  color: var(--text-color) !important;
+  opacity: 0.7;
   font-size: 0.65rem !important;
   position: relative;
   z-index: 1001;
 }
 
 .leaflet-control-attribution a {
-  color: rgba(228, 227, 220, 0.6) !important;
+  color: var(--text-color) !important;
 }

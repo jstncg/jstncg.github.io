@@ -50,7 +50,7 @@ export default function NowSection(): JSX.Element {
         {infoRows.map((row) => (
           <div key={row.label} className="flex items-center gap-4">
             <h3 className="text-text whitespace-nowrap">{row.label}</h3>
-            <div className="flex-1 border-b border-dashed" style={{ borderColor: 'rgba(228, 227, 220, 0.4)' }} />
+            <div className="flex-1 border-b border-dashed" style={{ borderColor: 'var(--dotted-line)' }} />
             <h3 className="text-text whitespace-nowrap">{row.value}</h3>
           </div>
         ))}

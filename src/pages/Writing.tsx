@@ -24,7 +24,7 @@ export default function Writing(): JSX.Element {
       <div className="flex flex-col w-full -mt-2" onMouseLeave={() => setHoveredIndex(null)}>
         {writingItems.map((item, index) => (
           <div key={item.path}>
-            <div className="border-t border-custom-border" />
+            <div className="border-t theme-border" />
             <Link
               to={item.path}
               onMouseEnter={() => setHoveredIndex(index)}
@@ -35,7 +35,7 @@ export default function Writing(): JSX.Element {
               <span>{item.label}</span>
               <span className="text-[length:var(--font-size-body)] opacity-50">{formatDate(item.date)}</span>
             </Link>
-            {index === writingItems.length - 1 && <div className="border-t border-custom-border" />}
+            {index === writingItems.length - 1 && <div className="border-t theme-border" />}
           </div>
         ))}
       </div>

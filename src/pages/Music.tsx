@@ -1,4 +1,5 @@
-import { useRef, useState, useEffect, useCallback } from 'react';
+import { useState, useCallback } from 'react';
+import { useAudio } from '../contexts/AudioContext';
 
 interface MediaItem {
   name: string;
@@ -81,7 +82,7 @@ function MediaList({ items, hoveredItem, onHover, onPlay, isPlaying }: MediaList
               {item.name}
             </a>
           </span>
-          <div className="flex-1 border-b border-dashed" style={{ borderColor: 'rgba(228, 227, 220, 0.3)' }} />
+          <div className="flex-1 border-b border-dashed" style={{ borderColor: 'var(--dotted-line)' }} />
           <button
             onClick={() => onPlay(item.audioFile, item.startTime)}
             className="text-text p-1"
@@ -96,61 +97,8 @@ function MediaList({ items, hoveredItem, onHover, onPlay, isPlaying }: MediaList
 }
 
 export default function Music(): JSX.Element {
-  const [playingFile, setPlayingFile] = useState<string | null>(null);
-  const [isPaused, setIsPaused] = useState(false);
+  const { handlePlay, isPlaying } = useAudio();
   const [hovered, setHovered] = useState<{ category: string; name: string } | null>(null);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-  const currentFileRef = useRef<string | null>(null);
-
-  useEffect(() => {
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
-      currentFileRef.current = null;
-    };
-  }, []);
-
-  const handlePlay = useCallback((audioFile: string, startTime: number = 0) => {
-    if (playingFile === audioFile && !isPaused) {
-      audioRef.current?.pause();
-      setIsPaused(true);
-      return;
-    }
-
-    if (currentFileRef.current === audioFile && isPaused && audioRef.current) {
-      audioRef.current.play();
-      setPlayingFile(audioFile);
-      setIsPaused(false);
-      return;
-    }
-
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current = null;
-    }
-
-    const audio = new Audio(encodeURI(audioFile));
-    audio.currentTime = startTime;
-    audioRef.current = audio;
-    currentFileRef.current = audioFile;
-
-    audio.play().catch(console.error);
-
-    audio.onended = () => {
-      setPlayingFile(null);
-      setIsPaused(false);
-      currentFileRef.current = null;
-    };
-
-    setPlayingFile(audioFile);
-    setIsPaused(false);
-  }, [playingFile, isPaused]);
-
-  const checkIsPlaying = useCallback((audioFile: string) => 
-    playingFile === audioFile && !isPaused
-  , [playingFile, isPaused]);
 
   const createHoverHandler = useCallback((category: string) => 
     (name: string | null) => setHovered(name ? { category, name } : null)
@@ -170,7 +118,7 @@ export default function Music(): JSX.Element {
           hoveredItem={getHoveredForCategory('film')}
           onHover={createHoverHandler('film')}
           onPlay={handlePlay}
-          isPlaying={checkIsPlaying}
+          isPlaying={isPlaying}
         />
 
         <h3 className="font-normal mb-3 opacity-50">Music</h3>
@@ -179,7 +127,7 @@ export default function Music(): JSX.Element {
           hoveredItem={getHoveredForCategory('music')}
           onHover={createHoverHandler('music')}
           onPlay={handlePlay}
-          isPlaying={checkIsPlaying}
+          isPlaying={isPlaying}
         />
 
         <h3 className="font-normal mb-3 opacity-50">Games</h3>
@@ -188,7 +136,7 @@ export default function Music(): JSX.Element {
           hoveredItem={getHoveredForCategory('games')}
           onHover={createHoverHandler('games')}
           onPlay={handlePlay}
-          isPlaying={checkIsPlaying}
+          isPlaying={isPlaying}
         />
       </div>
     </div>

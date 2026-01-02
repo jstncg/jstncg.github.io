@@ -6,7 +6,7 @@ export default {
       colors: {
         bg: 'var(--bg)',
         text: 'var(--text-color)',
-        'custom-border': '#333333',
+        'custom-border': 'var(--border-color)',
       },
       maxWidth: {
         content: '650px',

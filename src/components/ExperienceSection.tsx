@@ -54,7 +54,7 @@ function ExperienceLogo({ exp }: { exp: Experience }): JSX.Element {
   };
 
   return (
-    <div className="w-12 h-12 md:w-10 md:h-10 rounded-lg flex items-center justify-center p-2 flex-shrink-0 bg-white/[0.06]">
+    <div className="w-12 h-12 md:w-10 md:h-10 rounded-lg flex items-center justify-center p-2 flex-shrink-0 logo-bg">
       <img
         src={exp.image}
         alt={exp.company}
@@ -78,7 +78,7 @@ function ExperienceItem({ exp }: { exp: Experience }): JSX.Element {
     </>
   );
 
-  const className = "flex items-start gap-4 py-2.5 md:gap-3.5 -mx-3 px-3 rounded hover:bg-[#222327] group transition-colors duration-200 ease-out";
+  const className = "flex items-start gap-4 py-2.5 md:gap-3.5 -mx-3 px-3 rounded experience-hover group transition-colors duration-200 ease-out";
 
   if (exp.url) {
     return (
